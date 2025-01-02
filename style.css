@@ -1,0 +1,297 @@
+@import url('https://fonts.googleapis.com/css2?family=Doto:wght@100..900&family=Noto+Sans:ital,wght@0,100..900;1,100..900&display=swap');
+
+@keyframes slideInLeft {
+    from {
+        transform: translateX(-5vw);
+    }
+    to {
+        transform: translateX(0);
+    }
+}
+
+@keyframes slideInRight {
+    from {
+        transform: translateX(7vw);
+    }
+    to {
+        transform: translateX(0);
+    }
+}
+
+@keyframes slideInTop {
+    from {
+        transform: translateY(-10vh);
+    }
+    to {
+        transform: translateY(0);
+    }
+}
+
+* { /* universal selector, edits all elements at once */
+    margin: 0;
+    box-sizing: border-box; /* makes padding, border, width/height implementation easier by behaving more universally */
+}
+
+body {
+    height: 200vh;
+    background: url("background.png") no-repeat center/cover;
+    font-family: "Doto", serif;
+    overflow-x: hidden;
+    background-color: black;   
+}
+
+.welcome { /* Text on the center of the screen */
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    display: flex;
+    justify-content: center;  /* Centers horizontally */
+    z-index: 0;
+    text-align: center; 
+    font-size: 5vh;
+    padding-top: 20vh;
+}
+
+.title { /* title of page */
+    color: orange;
+    z-index: 0;
+}
+
+.caption { /* caption of page */
+    color: white;
+    margin-top: 8vh;
+}
+
+.navigation { /* how to display content upon activating the dropdown */
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    display: flex;
+    justify-content: center;  /* Centers horizontally */
+    font-size: xx-large;
+    z-index: 100; /* without this line of code, hovering wasn't working because logo was most forefront layer on the webpage */
+    background-color: rgba(0, 0, 0, 0.6);
+
+    /* animation related code */
+    animation-name: slideInTop;
+    animation-duration: 0.4s;
+    animation-timing-function: ease-in;
+    animation-delay: 0s;
+    animation-iteration-count: 1;
+    animation-direction: normal;
+    animation-fill-mode: none;
+}
+
+.navigation button {
+    background-color: transparent;
+    border-width: 1px;
+    border-left-color: transparent;
+    border-right-color: transparent;
+    border-bottom-color: white;
+    color: white;
+    padding: 2vw;
+    font-family: "Doto", serif;
+    font-size: 3.5vh;
+}
+
+.navigation button:hover {
+    color: orange;
+    border-bottom-color: orange;
+}
+
+.logo {
+    display: flex;
+    position: fixed;
+    top: 16.4vh;
+    left: 4vw;
+    font-size: 1.5vw;
+    font-weight: 700;
+    padding: 1vw 2vw;
+    color: orange; 
+    background-color: black;
+    border: 0.3vw solid orange;
+    border-radius: 2vw;
+    z-index: 101;
+
+    /* animation related code - smooth transition of animation as well */
+    transition-duration: transform;
+    transition-property: 0.3s;
+    transition-timing-function: ease;
+    transition-delay: 0s;
+    transition: all 0.3s;
+}
+
+.logo:hover {
+    transform: translateY(-1.5vh);
+    background-color: orange;
+    color: white;
+}
+
+.project h1 {
+    position: relative;
+    top: 80vh;
+    display: flex;
+    justify-content: center;
+    font-size: 5vh;
+    color: skyblue;
+}
+
+.project p {
+    position: relative;
+    top: 75vh;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    font-size: 5vh;
+    padding-left: 2vw;
+    padding-right: 2vw;
+    padding-bottom: 5vh;
+    padding-top: 3vh;
+    color: white;
+    font-style: italic;
+    background-color: rgba(0,0,0,0.3);
+    z-index: -1;
+}
+
+.pictures {
+    justify-content: center;
+    display: flex;
+    padding-top: 100vh;
+    padding-bottom: 5vh;
+}
+
+.pictures img {
+    width: 24vw;
+    height: 32vh;
+    border: 2px solid skyblue;
+    border-radius: 1vw;
+}
+
+.gitHub {
+    width: 8vw;
+    height: 16vh;
+}
+
+.linkedIn {
+    width: 9.5vw;
+    height: 19vh;
+}
+
+a {
+    z-index: 98;
+}
+
+.contact {
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    padding-top: 50vh;  
+}
+
+.project2 h1 {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    font-size: 5vh;
+    color: green;
+}
+
+.project2 p {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    font-size: 5vh;
+    color: white;
+    padding-top: 2vh;
+}
+
+.project2 a {
+    position: relative;
+    display: flex;
+    margin-left: 29.5vw;
+    font-size: 5vh;
+    margin-top: 5vh;
+    color: green; 
+    text-decoration: underline;
+    font-weight: 700;
+    margin-bottom: 2vh;
+}
+
+.project a {
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    font-size: 5vh;
+    margin-top: 75vh;
+    margin-left: 41.5vw;
+    color: skyblue; 
+    text-decoration: underline;
+    font-weight: 700;
+}
+
+.caption p {
+    border: 0.3vw solid skyblue;
+    border-radius: 1vw;
+    margin-left: 1.75vw;
+    margin-right: 1.75vw;
+    margin-bottom: 10vh;
+}
+
+.caption2 {
+    border: 2px solid green;
+    border-radius: 1vw;
+    margin-left: 15vw;
+    margin-right: 15vw;
+}
+
+.project2 video {
+    margin-left: 28.5vw;
+    border-radius: 3vw;
+    border: 4px solid green;
+    width: 12vw;
+    height: 24vh;
+}
+
+.box img {
+    width: 16vw;
+    height: 43vh;
+    border-radius: 7vw;
+    border: 0.5vh solid orange;
+    margin-top: 44vh;
+    margin-left: 2vw;
+    justify-content: center;
+    display: flex;
+    position: absolute;
+}
+
+.seal img {
+    position: relative;
+    width: 10vw;
+    height: auto;
+    margin-top: 53vh;
+    margin-left: 26vw;
+    z-index: 30;
+}
+
+.SealTitles h1 {
+    color:orange;
+    justify-content: center;
+    display: flex;
+    position: relative;
+    margin-bottom: 2vh;
+    z-index: 30;
+}
+
+.welcome {
+    background-color: rgba(0, 0, 0, 0.6);
+    z-index: 0;
+}
+
+#projectCaption {
+    z-index: 0;
+}
